@@ -27,7 +27,7 @@ jobs:
         with:
          context: .
          push: true
-         tags: KalsoomSarfraz/simple_nodejs_app:latest, KalsoomSarfraz/simple_nodejs_app:${{ github.run_number }}
+         tags: Kalsoomsarfraz/simple_nodejs_app:latest, Kalsoomsarfraz/simple_nodejs_app:${{ github.run_number }}
         
       
 
