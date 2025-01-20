@@ -22,11 +22,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESSTOKEN }}
-      - name: Build Docker image
-        run: |
-         docker run -d -p 3000:3000 my-app
-         - name: Test application
-         run: |
-         sleep 5 # Wait for the container to start
-         curl http://localhost:3000
+      - name: Build and Push to Docker hub
+        uses: docker/build-push-action@v2
+        with:
+         context: .
+         push: true
+         tags: KalsoomSarfraz/simple_nodejs_app:latest, KalsoomSarfraz/simple_nodejs_app:${{ github.run_number }}
+        
+      
+
 
